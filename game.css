@@ -1,12 +1,20 @@
 body {
   margin: 0;
-  background: url('wallpaper new.jpg') no-repeat center center fixed;
+  background: url('new\ bg\ img.png')no-repeat center center fixed;
   background-size: cover;
   font-family: sans-serif;
   overflow: hidden;
-    touch-action: manipulation;
+  touch-action: manipulation;
   -ms-touch-action: manipulation;
-  overscroll-behavior: contain
+  overscroll-behavior: contain;
+}
+
+/* Desktop background override */
+@media (min-width: 768px) {
+  body {
+    background: url('bg\ img.png') no-repeat center center fixed;
+    background-size: cover;
+  }
 }
 
 .game-container {
@@ -38,7 +46,6 @@ body {
   padding: 0;
 }
 
-
 .falling-item {
   position: absolute;
   width: 12vw;
@@ -50,7 +57,6 @@ body {
   background-position: center;
 }
 
-/* Touch Controls */
 .touch-controls {
   position: absolute;
   bottom: 2vh;
@@ -71,8 +77,6 @@ body {
   transform: scale(1.1);
 }
 
-
-/* Name Overlay Enhanced */
 .overlay {
   position: fixed;
   top: 0;
@@ -95,7 +99,7 @@ body {
   border-radius: 20px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff; /* White text */
+  color: #ffffff;
   width: 70vw;
   max-width: 300px;
   outline: none;
@@ -108,7 +112,6 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-weight: 300;
 }
-
 
 .overlay p {
   font-size: 4vw;
@@ -128,7 +131,6 @@ body {
   }
 }
 
-
 #gameOverScreen {
   position: fixed;
   top: 0;
@@ -144,6 +146,12 @@ body {
   z-index: 999;
   color: white;
   font-size: 4vw;
+}
+
+#finalScoreText {
+  margin-bottom: 1vh;
+  text-align: center;
+  border: none;
 }
 
 .game-over-box {
@@ -170,20 +178,15 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 40px;
   margin-top: 20px;
 }
 
 #restartBtn {
-  /* Removed overriding size */
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
-#infoBtn {
-  transform: scale(1.2); /* Adjust the value if needed */
-}
-
 
 .button-row a {
   display: inline-block;
@@ -196,16 +199,15 @@ body {
   transform: scale(1.1);
 }
 
-/* Make both buttons uniform */
 #restartBtn,
 #infoBtn {
   width: 60px;
   height: 60px;
-  object-fit: contain;  /* Ensures proper fitting */
+  object-fit: contain;
   image-rendering: auto;
   cursor: pointer;
   transition: transform 0.2s ease;
-  margin: 0; /* remove default spacing */
+  margin: 0;
 }
 
 #hearts {
@@ -222,18 +224,19 @@ body {
   height: auto;
 }
 
-/* ✅ MODIFIED BUTTON-ROW SECTION BELOW */
 .button-row {
-  position: absolute;
-  bottom: 2vh;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  z-index: 10;
+  gap: 30px;
+}
+
+.button-wrapper {
+  margin: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-row img {
@@ -247,21 +250,21 @@ body {
   transform: scale(1.1);
 }
 
-/* Optional mobile fine-tuning */
 @media (max-width: 480px) {
   .button-row img {
     width: 50px;
     height: 50px;
   }
 
-  .button-row {
-    gap: 12px;
+  .button-wrapper {
+    margin: 0 20px;
   }
 }
 
 * {
   box-sizing: border-box;
 }
+
 #playerName {
   width: 80vw;
   max-width: 400px;
@@ -269,7 +272,7 @@ body {
   font-size: 1.1em;
   border: none;
   border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   outline: none;
   margin-top: 20px;
   font-family: 'Segoe UI', sans-serif;
@@ -279,8 +282,9 @@ body {
   color: #999;
   font-style: italic;
 }
+
 @media (max-width: 768px) {
   #finalScoreText {
-    font-size: 9vw; /* Bigger for mobile */
+    font-size: 9vw;
   }
 }
