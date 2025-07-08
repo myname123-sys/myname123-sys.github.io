@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Fruit Catcher</title>
+  <link rel="stylesheet" href="game.css" />
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <!-- Overlay: Player Name Entry -->
+  <div class="overlay" id="nameOverlay">
+    <input type="text" id="playerName" placeholder="Enter your name" />
+    <p>Press ENTER to start</p>
+  </div>
+
+  <!-- Game Area -->
+  <div class="game-container" style="display: none">
+    <div id="score">Score: 0</div>
+<div id="hearts">
+  <img src="red heart.png" class="heart" />
+  <img src="red heart.png" class="heart" />
+  <img src="red heart.png" class="heart" />
+  <img src="red heart.png" class="heart" />
+  <img src="red heart.png" class="heart" />
+</div>
+
+    <div id="basket"></div>
+
+  <!-- Touch Controls -->
+    <div class="touch-controls">
+  <img id="left-btn" src="left button.png" alt="Left" class="control-button" />
+  <img id="right-btn" src="right button.png" alt="Right" class="control-button" />
+</div>
+
+  <!-- Sounds -->
+    <audio id="catch-sound" src="catch sound.mp3"></audio>
+  </div>
+  <!-- Game Over Screen -->
+<!-- Game Over Screen -->
+<div id="gameOverScreen">
+  <div id="finalScoreText">Your score: 0</div>
+  <!-- restart and info buttons below -->
+
+
+  <div class="button-row">
+    <img id="restartBtn" src="restart-removebg-preview.png" alt="Restart" />
+    <a href="info.html">
+  <img id="infoBtn" src="info-removebg-preview.png" alt="Info" />
+</a>
+
+  </div>
+</div>
+
+
+</body>
+</html

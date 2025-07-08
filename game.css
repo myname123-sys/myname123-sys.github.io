@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  background: url('wallpaper new.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+  overflow: hidden;
+    touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  overscroll-behavior: contain
+}
+
+.game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#score {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  font-size: 4vw;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+#basket {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  width: 20vw;
+  height: 15vh;
+  max-height: 100px;
+  background: url('basket.png') no-repeat center/contain;
+  margin: 0;
+  padding: 0;
+}
+
+
+.falling-item {
+  position: absolute;
+  width: 12vw;
+  max-width: 70px;
+  height: 12vw;
+  max-height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Touch Controls */
+.touch-controls {
+  position: absolute;
+  bottom: 2vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 10;
+}
+
+.control-button {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.control-button:hover {
+  transform: scale(1.1);
+}
+
+
+/* Name Overlay Enhanced */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.overlay input {
+  font-size: 5vw;
+  padding: 1vw 3vw;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff; /* White text */
+  width: 70vw;
+  max-width: 300px;
+  outline: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.overlay input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+
+.overlay p {
+  font-size: 4vw;
+  color: white;
+  margin-top: 2vh;
+  text-shadow: 0 0 3px black;
+}
+
+@media (max-width: 400px) {
+  .overlay input {
+    font-size: 6vw;
+    width: 80vw;
+  }
+
+  .overlay p {
+    font-size: 5vw;
+  }
+}
+
+
+#gameOverScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+  color: white;
+  font-size: 4vw;
+}
+
+.game-over-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 5vh 8vw;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  text-shadow: 1px 1px 3px black;
+}
+
+.game-over-box h2 {
+  font-size: 6vw;
+  margin-bottom: 2vh;
+}
+
+.game-over-box p {
+  font-size: 5vw;
+  margin-bottom: 3vh;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+#restartBtn {
+  /* Removed overriding size */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#infoBtn {
+  transform: scale(1.2); /* Adjust the value if needed */
+}
+
+
+.button-row a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+#restartBtn:hover,
+#infoBtn:hover {
+  transform: scale(1.1);
+}
+
+/* Make both buttons uniform */
+#restartBtn,
+#infoBtn {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;  /* Ensures proper fitting */
+  image-rendering: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0; /* remove default spacing */
+}
+
+#hearts {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  display: flex;
+  gap: 0.5vw;
+}
+
+.heart {
+  width: 5vw;
+  max-width: 40px;
+  height: auto;
+}
+
+/* ✅ MODIFIED BUTTON-ROW SECTION BELOW */
+.button-row {
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.button-row img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button-row img:hover {
+  transform: scale(1.1);
+}
+
+/* Optional mobile fine-tuning */
+@media (max-width: 480px) {
+  .button-row img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .button-row {
+    gap: 12px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+#playerName {
+  width: 80vw;
+  max-width: 400px;
+  padding: 15px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  outline: none;
+  margin-top: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#playerName::placeholder {
+  color: #999;
+  font-style: italic;
+}
+@media (max-width: 768px) {
+  #finalScoreText {
+    font-size: 9vw; /* Bigger for mobile */
+  }
+}

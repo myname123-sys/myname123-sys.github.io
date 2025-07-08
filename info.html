@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About the Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      background: url('wallpaper new.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Baloo 2', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 5vh 5vw;
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+      max-width: 90vw;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 1vh;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.7em;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    #backBtn {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      background-color: #ffcc70;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+
+    #backBtn:hover {
+      background-color: #ffd98e;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Fruit Catcher!</h1>
+    <p>
+      🎮 This is a fun and simple fruit-catching game.<br><br>
+      🧺 Use the <strong>left/right arrow keys</strong> or <strong>click the on-screen buttons</strong> to move the basket.<br><br>
+      🍓 Catch fruits to increase your score.<br>
+      💥 If you catch a <strong>bomb</strong>, the game ends immediately.<br>
+      ❤️ You start with <strong>5 lives</strong>. If a fruit is missed, <strong>1 life is lost</strong>.<br>
+      🍇 <strong>Catch 5 fruits in a row</strong>, and you’ll <strong>regain 1 life</strong> (if not already full).<br><br>
+      🚀 Try to score as high as possible! Good luck!
+    </p>
+    <button id="backBtn" onclick="window.location.href='game.html'">Back to Game</button>
+  </div>
+</body>
+</html>
