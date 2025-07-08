@@ -1,7 +1,9 @@
 body {
   margin: 0;
-  background: url('new\ bg\ img.png')no-repeat center center fixed;
+  background: url('new bg img.png') no-repeat center center;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: sans-serif;
   overflow: hidden;
   touch-action: manipulation;
@@ -12,10 +14,12 @@ body {
 /* Desktop background override */
 @media (min-width: 768px) {
   body {
-    background: url('bg\ img.png') no-repeat center center fixed;
+    background: url('bg img.png') no-repeat center center;
     background-size: cover;
+    background-position: center;
   }
 }
+
 
 .game-container {
   position: relative;
