@@ -11,7 +11,9 @@
   <!-- Overlay: Player Name Entry -->
   <div class="overlay" id="nameOverlay">
     <input type="text" id="playerName" placeholder="Enter your name" />
-    <p>Press ENTER to start</p>
+    <button onclick="startGame()" style="background: none; border: none; padding: 0;">
+    <img src="continue 2.png" alt="Start" style="width: 80px; height: auto;">
+    </button>
   </div>
 
   <!-- Game Area -->
@@ -54,8 +56,11 @@
 
   </div>
 </div>
-
-
-
+<script>
+function startGame() {
+  // Your game logic here
+  console.log("Game Started");
+}
+</script>
 </body>
 </html>
